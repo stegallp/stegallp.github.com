@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Paul Stegall Pridham | Ergonomics and Rehabilitation Engineering</title>
+
+  <meta
+    name="description"
+    content="Academic portfolio of Paul Stegall Pridham, a researcher and lecturer specializing in ergonomics, rehabilitation engineering, exoskeletons, robotics, and human factors."
+  >
+
+  <style>
+    :root {
+      --navy: #00274c;
+      --blue: #0056b3;
+      --maize: #ffcb05;
+      --ink: #17202a;
+      --muted: #52616f;
+      --background: #f5f7fa;
+      --surface: #ffffff;
+      --surface-alt: #eef3f7;
+      --border: #d7e0e8;
+      --success: #1f6f5c;
+      --max-width: 1180px;
+      --radius: 18px;
+      --shadow: 0 18px 45px rgba(0, 39, 76, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--background);
+      font-family:
+        Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--blue);
+      text-underline-offset: 0.2em;
+    }
+
+    a:hover {
+      color: var(--navy);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 4px solid rgba(255, 203, 5, 0.65);
+      outline-offset: 4px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: var(--navy);
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+      font-size: clamp(1.8rem, 4vw, 2.55rem);
+      letter-spacing: -0.035em;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 999;
+      padding: 0.75rem 1rem;
+      color: white;
+      background: var(--navy);
+      border-radius: 8px;
+      transform: translateY(-160%);
+      transition: transform 0.2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      color: white;
+      background: rgba(0, 39, 76, 0.96);
+      border-bottom: 4px solid var(--maize);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 72px;
+      gap: 1.5rem;
+    }
+
+    .brand {
+      color: white;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: -0.025em;
+    }
+
+    .brand span {
+      color: var(--maize);
+    }
+
+    .site-nav ul {
+      display: flex;
+      align-items: center;
+      gap: 1.15rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .site-nav a {
+      color: white;
+      font-size: 0.93rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .site-nav a:hover {
+      color: var(--maize);
+    }
+
+    .menu-button {
+      display: none;
+      min-width: 44px;
+      min-height: 44px;
+      color: white;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 8px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(
+          circle at 85% 15%,
+          rgba(255, 203, 5, 0.25),
+          transparent 25rem
+        ),
+        linear-gradient(135deg, #00274c 0%, #003f77 65%, #0056a7 100%);
+    }
+
+    .hero::after {
+      position: absolute;
+      right: -8rem;
+      bottom: -13rem;
+      width: 32rem;
+      height: 32rem;
+      content: "";
+      border: 4rem solid rgba(255, 255, 255, 0.04);
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.7fr);
+      align-items: center;
+      gap: 4rem;
+      min-height: 660px;
+      padding-block: 6rem;
+    }
+
+    .eyebrow {
+      margin-bottom: 0.8rem;
+      color: var(--maize);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      margin-bottom: 1rem;
+      color: white;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 7vw, 6.2rem);
+      font-variant: small-caps;
+      letter-spacing: -0.045em;
+    }
+
+    .hero .title {
+      max-width: 760px;
+      margin-bottom: 1rem;
+      color: #f4f7fb;
+      font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+      font-weight: 650;
+    }
+
+    .hero .summary {
+      max-width: 760px;
+      margin-bottom: 2rem;
+      color: #e2ebf3;
+      font-size: 1.08rem;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0.75rem 1.1rem;
+      color: var(--navy);
+      background: var(--maize);
+      border: 2px solid var(--maize);
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .button:hover {
+      color: var(--navy);
+      background: #ffe167;
+      transform: translateY(-2px);
+    }
+
+    .button.secondary {
+      color: white;
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.65);
+    }
+
+    .button.secondary:hover {
+      color: var(--navy);
+      background: white;
+    }
+
+    .profile-card {
+      padding: 1.75rem;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.96);
+      border-top: 7px solid var(--maize);
+      border-radius: var(--radius);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.22);
+    }
+
+    .profile-card h2 {
+      margin-bottom: 1rem;
+      font-size: 1.35rem;
+    }
+
+    .profile-card p {
+      margin-bottom: 0.9rem;
+    }
+
+    .profile-card strong {
+      display: block;
+      color: var(--navy);
+    }
+
+    .profile-card .credentials {
+      margin-bottom: 1.3rem;
+      padding-bottom: 1.3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    main section {
+      padding-block: 5.5rem;
+    }
+
+    main section:nth-child(even) {
+      background: var(--surface);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 2.2rem;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      padding: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    section:nth-child(even) .card {
+      background: var(--background);
+    }
+
+    .card h3 {
+      margin-bottom: 0.45rem;
+    }
+
+    .meta {
+      margin-bottom: 0.85rem;
+      color: var(--success);
+      font-size: 0.91rem;
+      font-weight: 750;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 1.25rem;
+      max-width: 980px;
+      margin-left: 0.65rem;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      position: absolute;
+      top: 0.25rem;
+      bottom: 0.25rem;
+      left: 0;
+      width: 3px;
+      content: "";
+      background: var(--border);
+      border-radius: 10px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 1.4rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .timeline-item::before {
+      position: absolute;
+      top: 1.8rem;
+      left: -2.55rem;
+      width: 14px;
+      height: 14px;
+      content: "";
+      background: var(--maize);
+      border: 4px solid var(--navy);
+      border-radius: 50%;
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-item p:last-child {
+      margin-bottom: 0;
+    }
+
+    .year {
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .education-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .degree {
+      padding: 1.5rem;
+      background: var(--surface-alt);
+      border-left: 6px solid var(--maize);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .degree h3 {
+      margin-bottom: 0.35rem;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    details {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    details[open] {
+      box-shadow: var(--shadow);
+    }
+
+    summary {
+      padding: 1.1rem 1.25rem;
+      color: var(--navy);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    details[open] summary {
+      background: var(--surface-alt);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .details-content {
+      padding: 1.25rem;
+    }
+
+    .details-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .publication-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .filter-button {
+      min-height: 42px;
+      padding: 0.55rem 0.95rem;
+      color: var(--navy);
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font: inherit;
+      font-size: 0.92rem;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .filter-button[aria-pressed="true"] {
+      color: white;
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .publication-list {
+      display: grid;
+      gap: 0.85rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: publications;
+    }
+
+    .publication {
+      position: relative;
+      padding: 1.15rem 1.15rem 1.15rem 4rem;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      counter-increment: publications;
+    }
+
+    .publication::before {
+      position: absolute;
+      top: 1.08rem;
+      left: 1.1rem;
+      min-width: 2rem;
+      color: var(--blue);
+      content: counter(publications) ".";
+      font-weight: 900;
+    }
+
+    .publication strong {
+      color: var(--navy);
+    }
+
+    .publication.highlight {
+      border-left: 5px solid var(--maize);
+    }
+
+    .award {
+      display: inline-block;
+      margin-top: 0.55rem;
+      padding: 0.2rem 0.55rem;
+      color: var(--navy);
+      background: #fff4bd;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .publication[hidden] {
+      display: none;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag-list li {
+      padding: 0.4rem 0.68rem;
+      color: var(--navy);
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .service-columns {
+      columns: 2 320px;
+      column-gap: 2.5rem;
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .service-columns li {
+      margin-bottom: 0.6rem;
+      break-inside: avoid;
+    }
+
+    .contact-section {
+      color: white;
+      background:
+        radial-gradient(
+          circle at 80% 0,
+          rgba(255, 203, 5, 0.22),
+          transparent 24rem
+        ),
+        var(--navy) !important;
+    }
+
+    .contact-section h2,
+    .contact-section h3 {
+      color: white;
+    }
+
+    .contact-section p {
+      color: #dce7f0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .contact-card {
+      padding: 1.5rem;
+      color: var(--ink);
+      background: white;
+      border-top: 6px solid var(--maize);
+      border-radius: var(--radius);
+    }
+
+    .contact-card p {
+      color: var(--ink);
+    }
+
+    .site-footer {
+      padding: 1.3rem 0;
+      color: #dce7f0;
+      text-align: center;
+      background: #001a33;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    .print-only {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .menu-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .site-nav {
+        position: absolute;
+        top: 72px;
+        right: 1rem;
+        left: 1rem;
+        display: none;
+        padding: 1rem;
+        background: var(--navy);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+      }
+
+      .site-nav.open {
+        display: block;
+      }
+
+      .site-nav ul {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .site-nav a {
+        display: block;
+        padding: 0.7rem;
+      }
+
+      .hero-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        min-height: auto;
+        padding-block: 4.5rem;
+      }
+
+      .card-grid,
+      .skills-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        font-size: 15px;
+      }
+
+      main section {
+        padding-block: 4rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.75rem, 16vw, 4rem);
+      }
+
+      .card-grid,
+      .skills-grid,
+      .education-list {
+        grid-template-columns: 1fr;
+      }
+
+      .publication {
+        padding-left: 3.4rem;
+      }
+
+      .timeline {
+        padding-left: 1.35rem;
+      }
+
+      .timeline-item::before {
+        left: -1.92rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+
+    @media print {
+      body {
+        color: black;
+        background: white;
+        font-size: 10pt;
+      }
+
+      .site-header,
+      .button-row,
+      .publication-controls,
+      .site-footer,
+      .skip-link {
+        display: none !important;
+      }
+
+      .hero {
+        color: black;
+        background: white;
+      }
+
+      .hero-grid {
+        display: block;
+        min-height: 0;
+        padding: 0 0 1rem;
+      }
+
+      .hero h1,
+      .hero .title,
+      .hero .summary,
+      .eyebrow {
+        color: black;
+      }
+
+      .profile-card {
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+      }
+
+      main section,
+      main section:nth-child(even),
+      .contact-section {
+        padding: 1rem 0;
+        color: black;
+        background: white !important;
+      }
+
+      .contact-section h2,
+      .contact-section h3,
+      .contact-section p {
+        color: black;
+      }
+
+      .card,
+      .timeline-item,
+      details,
+      .publication,
+      .contact-card {
+        background: white;
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      details > * {
+        display: block;
+      }
+
+      .publication[hidden] {
+        display: block;
+      }
+
+      .print-only {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top">
+        Paul Stegall <span>Pridham</span>
+      </a>
+
+      <button
+        class="menu-button"
+        id="menu-button"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+      >
+        Menu
+      </button>
+
+      <nav class="site-nav" id="site-navigation" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#patents">Patents</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Ergonomics · Robotics · Rehabilitation Engineering</p>
+
+        <h1>Paul Stegall Pridham</h1>
+
+        <p class="title">
+          Research Area Specialist Senior and Lecturer
+        </p>
+
+        <p class="summary">
+          Researching novel solutions for medical and rehabilitative devices,
+          with a focus on how design and control influence outcomes in
+          cooperation with healthcare professionals. Particular interests
+          include motor control, neural plasticity, exoskeletons, robotics, and
+          integrated design and control.
+        </p>
+
+        <div class="button-row">
+          <a class="button" href="#research">Explore research</a>
+          <a class="button secondary" href="#publications">View publications</a>
+          <a class="button secondary" href="mailto:pridham@umich.edu">
+            Email Paul
+          </a>
+        </div>
+      </div>
+
+      <aside class="profile-card" aria-label="Professional information">
+        <div class="credentials">
+          <h2>Professional profile</h2>
+          <p>
+            <strong>Affiliation</strong>
+            Industrial and Operations Engineering<br>
+            Center for Ergonomics<br>
+            University of Michigan
+          </p>
+          <p>
+            <strong>Professional memberships</strong>
+            IEEE Member · ASME Member
+          </p>
+        </div>
+
+        <p>
+          <strong>Office</strong>
+          1891 IOE Building, Room 1205<br>
+          1205 Beal Avenue<br>
+          Ann Arbor, MI 48109
+        </p>
+
+        <p>
+          <strong>Email</strong>
+          <a href="mailto:pridham@umich.edu">pridham@umich.edu</a>
+        </p>
+
+        <p>
+          <strong>Phone</strong>
+          <a href="tel:+18165194319">+1 816-519-4319</a>
+        </p>
+
+        <p>
+          <a
+            href="https://scholar.google.com/scholar?q=Paul+Stegall+Pridham"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Google Scholar
+          </a>
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <section aria-labelledby="positions-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Career</p>
+          <h2 id="positions-heading">Positions held</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <p class="year">2022–Present</p>
+            <h3>Research Area Specialist Senior and Lecturer</h3>
+            <p>University of Michigan, Ann Arbor, Michigan</p>
+          </article>
+
+          <article class="timeline-item">
+            <p class="year">2021–2022</p>
+            <h3>Postdoctoral Scholar</h3>
+            <p>Northern Arizona University, Flagstaff, Arizona</p>
+          </article>
+
+          <article class="timeline-item">
+            <p class="year">2019–2021</p>
+            <h3>Postdoctoral Research Associate</h3>
+            <p>
+              Massachusetts Institute of Technology, Cambridge, Massachusetts
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <p class="year">2016–2018</p>
+            <h3>Lecturer</h3>
+            <p>University of Pennsylvania, Philadelphia, Pennsylvania</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="education-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Academic background</p>
+          <h2 id="education-heading">Education</h2>
+        </div>
+
+        <div class="education-list">
+          <article class="degree">
+            <p class="year">2016</p>
+            <h3>Ph.D. in Mechanical Engineering</h3>
+            <p>Columbia University, New York, New York</p>
+          </article>
+
+          <article class="degree">
+            <p class="year">2009</p>
+            <h3>B.S. in Mechanical Engineering</h3>
+            <p>Johns Hopkins University, Baltimore, Maryland</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" aria-labelledby="research-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Selected projects</p>
+          <h2 id="research-heading">Research experience</h2>
+          <p>
+            Work spanning exoskeletons, assistive robotics, human factors,
+            biomechanics, vehicle simulation, and the control of
+            electromechanical systems.
+          </p>
+        </div>
+
+        <div class="experience-list">
+          <details open>
+            <summary>
+              General Research Support — University of Michigan, 2022–Present
+            </summary>
+            <div class="details-content">
+              <p>
+                Operated and developed the departmental machine-shop training
+                program. Supported projects including ultrasound control of
+                exoskeletons, passive upper-limb exoskeletons, the impact of
+                motor performance and human trust in automated ground vehicles,
+                and applications in virtual environments.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              Powered Ankle and Hip Exoskeleton — Northern Arizona University,
+              2021–2022
+            </summary>
+            <div class="details-content">
+              <p>
+                Developed hardware and control systems for an exoskeleton with
+                active ankle and hip joints for clinical populations. The work
+                focused on coordinating control across multiple exoskeleton
+                joints in support of human locomotion.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              Powered Ankle Exoskeleton — Massachusetts Institute of
+              Technology, 2019–2021
+            </summary>
+            <div class="details-content">
+              <p>
+                Developed hardware and control systems for an ankle exoskeleton
+                designed to improve human performance. Created a fluent system
+                that works with the user and adapts to different environments
+                and tasks.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              Powered Torso Exoskeleton (ROSE) — Columbia University,
+              2013–2016
+            </summary>
+            <div class="details-content">
+              <p>
+                Designed and fabricated a powered torso exoskeleton for
+                correcting abnormal spinal curvature. Conducted experimental
+                validation and collected biomechanical data, including EMG and
+                kinematics.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              Powered Lower-Limb Exoskeleton — University of Delaware and
+              Columbia University, 2009–2016
+            </summary>
+            <div class="details-content">
+              <p>
+                Designed and fabricated lower-limb powered exoskeletons,
+                including ALEX II and ALEX III. Developed high- and low-level
+                controllers and collected biomechanical data, including EMG and
+                kinematics.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              Mining Robotics — National Robotics Engineering Center, 2008–2009
+            </summary>
+            <div class="details-content">
+              <p>
+                Developed high-degree-of-freedom robotic vehicles and fabricated
+                electromechanical systems for harsh and hazardous
+                environments.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              Vehicle Dynamic Simulation — National Robotics Engineering
+              Center, 2007
+            </summary>
+            <div class="details-content">
+              <p>
+                Simulated vehicle dynamics using commercial packages and
+                designed suspension-system control algorithms for use in
+                simulation.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching" aria-labelledby="teaching-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Instruction and mentorship</p>
+          <h2 id="teaching-heading">Teaching experience</h2>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <p class="meta">University of Michigan · 2023–Present</p>
+            <h3>Lecturer</h3>
+            <p>
+              Teaches human factors with laboratory coverage of environmental,
+              physical, and cognitive human factors. Developed lectures and
+              labs for a new course and teaches evaluation and design of work
+              environments for safe, effective, and efficient work.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="meta">University of Pennsylvania · 2016–2018</p>
+            <h3>Lecturer</h3>
+            <p>
+              Taught introductory SolidWorks, mechatronics, and laboratory
+              courses on dynamics, thermodynamics, heat transfer, vibrations,
+              fluids, and structures. Advised senior design teams and Penn
+              Aerospace's Rocketry Team.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="meta">Columbia University · 2013–2014</p>
+            <h3>Teaching Machine Design</h3>
+            <p>
+              Taught forward and inverse kinematics, linkages, actuation,
+              failure analysis, and part selection. Designed laboratory
+              equipment and projects involving gait trainers, surgical
+              trainers, and warehouse robots.
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="meta">Johns Hopkins University · 2006–2009</p>
+            <h3>Teaching Skills Relevant to Kayaking and Outdoor Competence</h3>
+            <p>
+              Provided instruction in river navigation, safety, paddling,
+              rolling skills, and instructor training, using individual
+              learning styles to develop students from novice to advanced
+              levels.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="development-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Recognition</p>
+          <h2 id="development-heading">Professional development and honors</h2>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <p class="meta">2019</p>
+            <h3>Kaufman Teaching Certificate</h3>
+            <p>Massachusetts Institute of Technology</p>
+          </article>
+
+          <article class="card">
+            <p class="meta">2018</p>
+            <h3>Anti-Violence Advocate</h3>
+            <p>University of Pennsylvania</p>
+          </article>
+
+          <article class="card">
+            <p class="meta">2015</p>
+            <h3>Best Paper Award — Honorable Mention</h3>
+            <p>ASME International Design Engineering Technical Conferences</p>
+          </article>
+
+          <article class="card">
+            <p class="meta">2009</p>
+            <h3>Departmental Fellowship</h3>
+            <p>University of Delaware</p>
+          </article>
+
+          <article class="card">
+            <p class="meta">2009</p>
+            <h3>General and Departmental Honors</h3>
+            <p>Johns Hopkins University</p>
+          </article>
+
+          <article class="card">
+            <h3>Pi Tau Sigma</h3>
+            <p>Mechanical Engineering Honor Society</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" aria-labelledby="publications-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Scholarship</p>
+          <h2 id="publications-heading">Publications</h2>
+          <p>
+            Peer-reviewed journal articles and international conference
+            proceedings concerning exoskeletons, rehabilitation robotics,
+            biomechanics, human factors, and human–robot interaction.
+          </p>
+        </div>
+
+        <div class="publication-controls" aria-label="Filter publications">
+          <button
+            class="filter-button"
+            type="button"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            All
+          </button>
+          <button
+            class="filter-button"
+            type="button"
+            data-filter="journal"
+            aria-pressed="false"
+          >
+            Journal articles
+          </button>
+          <button
+            class="filter-button"
+            type="button"
+            data-filter="conference"
+            aria-pressed="false"
+          >
+            Conference papers
+          </button>
+        </div>
+
+        <ol class="publication-list" id="publication-list">
+          <li class="publication" data-type="journal">
+            J. R. Williams, C. E. Cuddeback, S. Fang, D. Colley, N. Enlow,
+            P. Cox, <strong>P. Pridham</strong>, and Z. E. Lerner.
+            “OpenExo: An open-source modular exoskeleton to augment human
+            function.” <em>Science Robotics</em>, vol. 10, no. 103, 2025:
+            eadt1591.
+          </li>
+
+          <li class="publication" data-type="journal">
+            M. I. Wu, <strong>P. Stegall</strong>, H. C. Siu, and L. Stirling.
+            “Impact of haptic cues and an active ankle exoskeleton on gait
+            characteristics.” <em>Human Factors</em>, vol. 66, no. 3,
+            pp. 904–915, 2024.
+          </li>
+
+          <li class="publication" data-type="journal">
+            G. Nguyen, A. Stankovic, R. Bellisle, J. Todd, R. Browder,
+            <strong>P. Pridham</strong>, and K. Arquilla. “Examining
+            relationships between behavior, social environment, and trait
+            factors on mood and anxiety state during social isolation and
+            pseudo-confinement.” <em>Acta Astronautica</em>, 2023.
+          </li>
+
+          <li class="publication" data-type="journal">
+            <strong>P. Pridham</strong> and L. Stirling. “Ankle exoskeleton
+            torque controllers based on soleus muscle models.”
+            <em>PLoS ONE</em>, vol. 18, no. 2, 2023.
+          </li>
+
+          <li class="publication" data-type="journal">
+            S. Gonzalez, <strong>P. Stegall</strong>, S. M. Cain, H. C. Siu,
+            L. Stirling. “Assessment of a powered ankle exoskeleton on human
+            stability and balance.” <em>Applied Ergonomics</em>, 2022.
+          </li>
+
+          <li class="publication" data-type="journal">
+            S. Gonzalez, <strong>P. Stegall</strong>, H. Edwards, L. Stirling,
+            and H. C. Siu. “Ablation analysis to select wearable sensors for
+            classifying standing, walking, and running.”
+            <em>Sensors</em>, vol. 21, no. 1, p. 194, 2021.
+          </li>
+
+          <li class="publication" data-type="journal">
+            J. H. Park, <strong>P. Stegall</strong>, D. P. Roye, and
+            S. K. Agrawal. “Robotic Spine Exoskeleton (RoSE): Characterizing
+            the three-dimensional stiffness of the human torso in the treatment
+            of spine deformity.” <em>Neural Systems and Rehabilitation
+            Engineering, IEEE Transactions on</em>, 2018.
+          </li>
+
+          <li class="publication" data-type="journal">
+            <strong>P. Stegall</strong>, D. Zanotto, and S. K. Agrawal.
+            “Variable Damping Force Tunnel for Gait Training Using ALEX III.”
+            <em>Robotics and Automation Letters, IEEE</em>, vol. 2, no. 3,
+            pp. 1495–1501, 2017.
+          </li>
+
+          <li class="publication" data-type="journal">
+            J. H. Park, <strong>P. Stegall</strong>, H. Zhang, and
+            S. K. Agrawal. “Walking with a backpack using load distribution
+            and dynamic load compensation reduces metabolic cost and
+            adaptations to loads.” <em>IEEE Transactions on Neural Systems
+            and Rehabilitation Engineering</em>, vol. 25, no. 9,
+            pp. 1419–1430, 2016.
+          </li>
+
+          <li class="publication" data-type="journal">
+            J. H. Park, <strong>P. Stegall</strong>, and S. K. Agrawal.
+            “Reducing dynamic loads from a backpack during load carriage using
+            an upper body assistive device.”
+            <em>Mechanisms and Robotics, ASME Journal of</em>, vol. 8,
+            no. 5, 2016.
+          </li>
+
+          <li class="publication" data-type="journal">
+            D. Zanotto, Y. Akiyama, <strong>P. Stegall</strong>, and
+            S. K. Agrawal. “Knee joint misalignment in exoskeletons for the
+            lower extremities: Effects on user's gait.”
+            <em>Robotics, IEEE Transactions on</em>, vol. 31, no. 4,
+            pp. 978–987, 2015.
+          </li>
+
+          <li class="publication" data-type="journal">
+            S. Srivastava, P.-C. Kao, S. Kim, <strong>P. Stegall</strong>,
+            D. Zanotto, J. Higginson, S. Agrawal, and J. Scholz.
+            “Assist-as-needed robot-aided gait training improves walking
+            function in individuals following stroke.”
+            <em>IEEE Transactions on Neural Systems and Rehabilitation
+            Engineering</em>, vol. 23, pp. 956–963, 2015.
+          </li>
+
+          <li class="publication" data-type="journal">
+            <strong>P. Stegall</strong>, K. Winfree, D. Zanotto, and
+            S. K. Agrawal. “Rehabilitation exoskeleton design: Exploring the
+            effect of the anterior lunge degree of freedom.”
+            <em>Robotics, IEEE Transactions on</em>, vol. 29, no. 4,
+            pp. 838–846, 2013.
+          </li>
+
+          <li class="publication" data-type="journal">
+            D. Zanotto, G. Rosati, S. Spagnol, <strong>P. Stegall</strong>,
+            and S. K. Agrawal. “Effects of complementary auditory feedback in
+            robot-assisted lower extremity motor adaptation.”
+            <em>Neural Systems and Rehabilitation Engineering, IEEE
+            Transactions on</em>, vol. 21, no. 5, pp. 775–786, 2013.
+          </li>
+
+          <li class="publication" data-type="conference">
+            D. W. Han, S. Bhat, S. Yang, J. Smith, A. Salour, T. Stroup,
+            P. Pridham, Y. Liu, and X. J. Yang. “Interactions Between Workers
+            and Automated Guided Vehicles: Impact of eHMI Design.”
+            <em>Proceedings of the Human Factors and Ergonomics Society Annual
+            Meeting</em>, vol. 69, no. 1, pp. 1166–1172, 2025.
+          </li>
+
+          <li class="publication" data-type="conference">
+            S. Yang, S. Bhat, Y. Ren, <strong>P. Pridham</strong>, X. J. Yang,
+            T. Stroup, and A. Salour. “Identifying Worker Motion Through a
+            Manufacturing Plant: A Finite Automaton Model.”
+            <em>IEEE International Conference on Robot and Human Interactive
+            Communication</em>, pp. 1970–1977, 2024.
+          </li>
+
+          <li class="publication" data-type="conference">
+            S. Bagchi et al. “Towards Improved Replicability of Human Studies
+            in Human-Robot Interaction: Recommendations for Formalized
+            Reporting.” <em>ACM/IEEE International Conference on Human-Robot
+            Interaction</em>, 2023.
+          </li>
+
+          <li class="publication" data-type="conference">
+            J. Sloboda, <strong>P. Stegall</strong>, R. J. McKindles,
+            L. Stirling, and H. C. Siu. “Utility of Inter-subject Transfer
+            Learning for Wearable-Sensor-Based Joint Torque Prediction Models.”
+            <em>IEEE Engineering in Medicine and Biology Society
+            Conference</em>, pp. 4901–4907, 2021.
+          </li>
+
+          <li class="publication" data-type="conference">
+            E. J. Park, J. Kang, H. Su, <strong>P. Stegall</strong>,
+            D. L. Miranda, W. Hsu, M. Karabas, N. Phipps, S. K. Agrawal,
+            E. C. Goldfield, and C. J. Walsh. “Design and preliminary
+            evaluation of a multi-robotic system with pelvic and hip assistance
+            for pediatric gait rehabilitation.”
+            <em>IEEE International Conference on Rehabilitation Robotics</em>,
+            pp. 332–339, 2017.
+          </li>
+
+          <li class="publication highlight" data-type="conference">
+            J. H. Park, <strong>P. Stegall</strong>, S. K. Agrawal,
+            S. Yarlagadda, J. Tierney, S. Sharma, and J. Gillespie.
+            “Wearable Upper Body Suit for Assisting Human Load Carriage.”
+            <em>International Design Engineering Technical Conferences</em>,
+            ASME, 2015.
+            <span class="award">Best Paper Award Honorable Mention</span>
+          </li>
+
+          <li class="publication" data-type="conference">
+            Z. Sheng, J. H. Park, <strong>P. Stegall</strong>, and
+            S. K. Agrawal. “Analytic Determination of Wrench Closure Workspace
+            of Spatial Cable Driven Parallel Mechanisms.”
+            <em>International Design Engineering Technical Conferences</em>,
+            ASME, 2015.
+          </li>
+
+          <li class="publication" data-type="conference">
+            J. H. Park, <strong>P. Stegall</strong>, and S. K. Agrawal.
+            “Dynamic brace for correction of abnormal postures of the human
+            spine.” <em>IEEE International Conference on Rehabilitation
+            Robotics</em>, pp. 5922–5927, 2015.
+          </li>
+
+          <li class="publication" data-type="conference">
+            J. H. Park, D. Zanotto, V. Vashista, X. Jin,
+            <strong>P. Stegall</strong>, and S. K. Agrawal. “Second spine:
+            A device to relieve stresses on the upper body during loaded
+            walking.” <em>IEEE RAS &amp; EMBS International Conference on
+            Biomedical Robotics and Biomechatronics</em>, pp. 689–694, 2014.
+          </li>
+
+          <li class="publication" data-type="conference">
+            V. Youssofzadeh, D. Zanotto, <strong>P. Stegall</strong>,
+            M. Naeem, K. Wong-Lin, S. K. Agrawal, and G. Prasad.
+            “Directed neural connectivity changes in robot-assisted gait
+            training: A partial granger causality analysis.”
+            <em>Engineering in Medicine and Biology Society Conference</em>,
+            pp. 6361–6364, 2014.
+          </li>
+
+          <li class="publication" data-type="conference">
+            D. Zanotto, <strong>P. Stegall</strong>, and S. K. Agrawal.
+            “Adaptive assist-as-needed controller to improve gait symmetry in
+            robot-assisted gait training.”
+            <em>IEEE International Conference on Robotics and Automation</em>,
+            pp. 724–729, 2014.
+          </li>
+
+          <li class="publication" data-type="conference">
+            J. H. Park, <strong>P. Stegall</strong>, D. Zanotto, V. Vashista,
+            X. Jin, and S. K. Agrawal. “Design of the second spine: A secondary
+            pathway to transfer loads from the shoulders to the pelvis.”
+            <em>ASME International Design Engineering Technical Conferences
+            and Computers and Information in Engineering Conference</em>,
+            2013.
+          </li>
+
+          <li class="publication" data-type="conference">
+            D. Zanotto, T. Lenzi, <strong>P. Stegall</strong>, and
+            S. K. Agrawal. “Improving transparency of powered exoskeletons
+            using force/torque sensors on the supporting cuffs.”
+            <em>IEEE International Conference on Rehabilitation Robotics</em>,
+            pp. 1–6, 2013.
+          </li>
+
+          <li class="publication" data-type="conference">
+            D. Zanotto, <strong>P. Stegall</strong>, and S. K. Agrawal.
+            “Alex III: A novel robotic platform with 12 DOFs for human gait
+            training.” <em>IEEE International Conference on Rehabilitation
+            Robotics</em>, pp. 3914–3919, 2013.
+          </li>
+
+          <li class="publication" data-type="conference">
+            T. Lenzi, D. Zanotto, <strong>P. Stegall</strong>, M. Carrozza,
+            and S. K. Agrawal. “Reducing muscle effort in walking through
+            powered exoskeletons.”
+            <em>IEEE Engineering in Medicine and Biology Society
+            Conference</em>, pp. 3926–3929, 2012.
+          </li>
+
+          <li class="publication" data-type="conference">
+            <strong>P. Stegall</strong>, K. N. Winfree, and S. K. Agrawal.
+            “Degrees-of-freedom of a robotic exoskeleton and human adaptation
+            to new gait templates.”
+            <em>IEEE International Conference on Robotics and Automation</em>,
+            pp. 4986–4991, 2012.
+          </li>
+
+          <li class="publication" data-type="conference">
+            D. Zanotto, G. Rosati, F. Avanzini, <strong>P. Stegall</strong>,
+            and S. K. Agrawal. “Robot-assisted gait training with complementary
+            auditory feedback: Results on short-term motor adaptation.”
+            <em>IEEE RAS &amp; EMBS International Conference on Biomedical
+            Robotics and Biomechatronics</em>, pp. 1388–1393, 2012.
+          </li>
+
+          <li class="publication" data-type="conference">
+            K. N. Winfree, <strong>P. Stegall</strong>, and S. K. Agrawal.
+            “Design of a minimally constraining, passively supported gait
+            training exoskeleton: ALEX II.”
+            <em>IEEE International Conference on Rehabilitation Robotics</em>,
+            pp. 1–6, 2011.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="patents" aria-labelledby="patents-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Innovation</p>
+          <h2 id="patents-heading">Patents</h2>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <p class="meta">Issued · May 5, 2020</p>
+            <h3>Spinal treatment device, methods, and systems</h3>
+            <p>
+              S. K. Agrawal, J. H. Park, P. Stegall<br>
+              US Patent US10639185B2
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="meta">Issued · April 21, 2014</p>
+            <h3>Active movement training devices, methods, and systems</h3>
+            <p>
+              S. K. Agrawal, D. Zanotto, P. Stegall<br>
+              US Patent US9662526B2
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="meta">Issued · August 19, 2010</p>
+            <h3>Powered orthosis systems and methods</h3>
+            <p>
+              S. K. Agrawal, K. N. Winfree, P. Stegall, J. P. Scholz<br>
+              US Patent US8771208B2
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="meta">Patent application</p>
+            <h3>Back Brace</h3>
+            <p>
+              C. J. Kim, J. Ring, J. Nijssen, S. Pratt, S. Agrawal,
+              P. Stegall, J. Park<br>
+              US Patent Application US20180042755A1
+            </p>
+          </article>
+
+          <article class="card">
+            <p class="meta">Patent application</p>
+            <h3>Back Brace</h3>
+            <p>
+              C. J. Kim, J. Ring, J. Nijssen, S. Pratt, S. Agrawal,
+              P. Stegall, J. Park<br>
+              WO Patent Application WO2018035132A1
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Technical capabilities</p>
+          <h2 id="skills-heading">Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+          <article class="card">
+            <h3>Computer and control</h3>
+            <ul class="tag-list">
+              <li>SolidWorks</li>
+              <li>Pro/ENGINEER</li>
+              <li>MATLAB</li>
+              <li>Simulink</li>
+              <li>dSPACE ControlDesk</li>
+              <li>Real-time control</li>
+              <li>Rapid prototyping</li>
+              <li>Vicon NEXUS</li>
+              <li>Motion capture</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Fabrication</h3>
+            <ul class="tag-list">
+              <li>Machining</li>
+              <li>Welding</li>
+              <li>Waterjet</li>
+              <li>Laser cutting</li>
+              <li>3D printing</li>
+              <li>Electrical wiring</li>
+              <li>Circuit design</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Biomedical engineering</h3>
+            <ul class="tag-list">
+              <li>Motion capture</li>
+              <li>EMG</li>
+              <li>Metabolic measurements</li>
+              <li>Ground reaction force</li>
+              <li>Biomechanics</li>
+              <li>Exoskeletons</li>
+              <li>Gait analysis</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="service-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Professional engagement</p>
+          <h2 id="service-heading">Service and reviewing</h2>
+        </div>
+
+        <ul class="service-columns">
+          <li>
+            IOE Facilities and Computing Committee, University of Michigan
+            (2024–Present)
+          </li>
+          <li>
+            IOE Community Engagement Committee, University of Michigan
+            (2023–Present)
+          </li>
+          <li>
+            IOE Safety Committee, University of Michigan (2022–Present)
+          </li>
+          <li>
+            IOE Renovation Committee, University of Michigan (2023–2025)
+          </li>
+          <li>
+            IEEE P3018 Recommended Practice for Human-Robot Interaction Design
+            of Human Subject Studies
+          </li>
+          <li>
+            IEEE P3107 Standard Terminology for Human-Robot Interaction
+          </li>
+          <li>
+            Aeronautics and Astronautics Diversity, Inclusion, and Innovation
+            Committee
+          </li>
+          <li>
+            Researcher and Postdoctoral Association of Aeronautics and
+            Astronautics, Funding/Innovation Chair
+          </li>
+          <li>Invited speaker, Launch X (2018 and 2020)</li>
+          <li>Faculty advisor, Penn Aerospace Club Rocket Team</li>
+          <li>Faculty advisor for senior design teams</li>
+          <li>Supervised undergraduate research</li>
+          <li>IEEE/ASME Transactions on Mechatronics reviewer</li>
+          <li>
+            IEEE Transactions on Neural Systems and Rehabilitation Engineering
+            reviewer
+          </li>
+          <li>IEEE Transactions on Robotics reviewer</li>
+          <li>IEEE Robotics and Automation Letters reviewer</li>
+          <li>ASME Journal of Mechanisms and Robotics reviewer</li>
+          <li>MDPI Sensors reviewer</li>
+          <li>IEEE International Conference on Robotics and Automation reviewer</li>
+          <li>
+            IEEE International Conference on Rehabilitation Robotics reviewer
+          </li>
+          <li>
+            IEEE Engineering in Medicine and Biology Society Conference
+            reviewer
+          </li>
+          <li>
+            IEEE International Conference on Biomedical Robotics and
+            Biomechatronics reviewer
+          </li>
+          <li>
+            ASME International Design Engineering Technical Conferences
+            reviewer
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-heading">Research, teaching, and collaboration</h2>
+          <p>
+            For inquiries related to ergonomics, assistive technology,
+            rehabilitation engineering, exoskeletons, human factors, or
+            academic collaboration, use the contact information provided here.
+          </p>
+
+          <div class="button-row">
+            <a class="button" href="mailto:pridham@umich.edu">
+              pridham@umich.edu
+            </a>
+            <a class="button secondary" href="tel:+18165194319">
+              +1 816-519-4319
+            </a>
+          </div>
+        </div>
+
+        <aside class="contact-card">
+          <h3>University of Michigan</h3>
+          <p>
+            Industrial and Operations Engineering<br>
+            Center for Ergonomics<br>
+            1891 IOE Building, Room 1205<br>
+            1205 Beal Avenue<br>
+            Ann Arbor, MI 48109
+          </p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        &copy; <span id="current-year"></span> Paul Stegall Pridham.
+        Academic portfolio.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById("menu-button");
+    const navigation = document.getElementById("site-navigation");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navigation.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navigation.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navigation.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const filterButtons = document.querySelectorAll(".filter-button");
+    const publications = document.querySelectorAll(".publication");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const selectedFilter = button.dataset.filter;
+
+        filterButtons.forEach((item) => {
+          item.setAttribute(
+            "aria-pressed",
+            String(item === button)
+          );
+        });
+
+        publications.forEach((publication) => {
+          const shouldDisplay =
+            selectedFilter === "all" ||
+            publication.dataset.type === selectedFilter;
+
+          publication.hidden = !shouldDisplay;
+        });
+      });
+    });
+
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
